@@ -3,20 +3,20 @@ import periodictable as pt
 
 
 gui.theme("Black")
-
+global_font = "Arial 30"
 layout = [
     [
         gui.Text("Welcome to Calculator",
-                 font='Timesnewroman',
+                 font= global_font,
                  justification='centre')
     ],
     [
         gui.Text("Choose your Mode",
-                 font='Timesnewroman',
+                 font= global_font,
                  justification='centre')
     ],
     [
-        gui.Text("1.", font='Timesnewroman'),
+        gui.Text("1.", font= global_font),
         gui.Button('Periodic Table', size=(50, 1))
     ],
 ]
@@ -37,202 +37,206 @@ while True:
         d_colour = '#1E90FF'
         f_colour = '#FF0000'
 
+        loadingscreen = gui.Window("Loading...", layout = [[gui.Text("\n\n\t\tLoading...\t\t\n\n", font = global_font)]])
+
         periodictablelayout = [
             #1st period
             [
-                gui.Button('H', size=(1, 1), button_color=('', s_colour)),
-                gui.Button('', size=(1, 1), button_color=(gui.theme_background_color(), gui.theme_background_color()))
-                ,gui.Button('', size=(1, 1), button_color=(gui.theme_background_color(), gui.theme_background_color()))
-                ,gui.Button('', size=(1, 1), button_color=(gui.theme_background_color(), gui.theme_background_color()))
-                ,gui.Button('', size=(1, 1), button_color=(gui.theme_background_color(), gui.theme_background_color()))
-                ,gui.Button('', size=(1, 1), button_color=(gui.theme_background_color(), gui.theme_background_color()))
-                ,gui.Button('', size=(1, 1), button_color=(gui.theme_background_color(), gui.theme_background_color()))
-                ,gui.Button('', size=(1, 1), button_color=(gui.theme_background_color(), gui.theme_background_color()))
-                ,gui.Button('', size=(1, 1), button_color=(gui.theme_background_color(), gui.theme_background_color()))
-                ,gui.Button('', size=(1, 1), button_color=(gui.theme_background_color(), gui.theme_background_color()))
-                ,gui.Button('', size=(1, 1), button_color=(gui.theme_background_color(), gui.theme_background_color()))
-                ,gui.Button('', size=(1, 1), button_color=(gui.theme_background_color(), gui.theme_background_color()))
-                ,gui.Button('', size=(1, 1), button_color=(gui.theme_background_color(), gui.theme_background_color()))
-                ,gui.Button('', size=(1, 1), button_color=(gui.theme_background_color(), gui.theme_background_color()))
-                ,gui.Button('', size=(1, 1), button_color=(gui.theme_background_color(), gui.theme_background_color()))
-                ,gui.Button('', size=(1, 1), button_color=(gui.theme_background_color(), gui.theme_background_color()))
-                ,gui.Button('', size=(1, 1), button_color=(gui.theme_background_color(), gui.theme_background_color())),
-                gui.Button('He', size=(1, 1), button_color=('', p_colour)),
+                gui.Button('H', font = global_font, size=(1, 1), button_color=('', s_colour)),
+                gui.Button('', font = global_font, size=(1, 1), button_color=(gui.theme_background_color(), gui.theme_background_color()))
+                ,gui.Button('', font = global_font, size=(1, 1), button_color=(gui.theme_background_color(), gui.theme_background_color()))
+                ,gui.Button('', font = global_font, size=(1, 1), button_color=(gui.theme_background_color(), gui.theme_background_color()))
+                ,gui.Button('', font = global_font, size=(1, 1), button_color=(gui.theme_background_color(), gui.theme_background_color()))
+                ,gui.Button('', font = global_font, size=(1, 1), button_color=(gui.theme_background_color(), gui.theme_background_color()))
+                ,gui.Button('', font = global_font, size=(1, 1), button_color=(gui.theme_background_color(), gui.theme_background_color()))
+                ,gui.Button('', font = global_font, size=(1, 1), button_color=(gui.theme_background_color(), gui.theme_background_color()))
+                ,gui.Button('', font = global_font, size=(1, 1), button_color=(gui.theme_background_color(), gui.theme_background_color()))
+                ,gui.Button('', font = global_font, size=(1, 1), button_color=(gui.theme_background_color(), gui.theme_background_color()))
+                ,gui.Button('', font = global_font, size=(1, 1), button_color=(gui.theme_background_color(), gui.theme_background_color()))
+                ,gui.Button('', font = global_font, size=(1, 1), button_color=(gui.theme_background_color(), gui.theme_background_color()))
+                ,gui.Button('', font = global_font, size=(1, 1), button_color=(gui.theme_background_color(), gui.theme_background_color()))
+                ,gui.Button('', font = global_font, size=(1, 1), button_color=(gui.theme_background_color(), gui.theme_background_color()))
+                ,gui.Button('', font = global_font, size=(1, 1), button_color=(gui.theme_background_color(), gui.theme_background_color()))
+                ,gui.Button('', font = global_font, size=(1, 1), button_color=(gui.theme_background_color(), gui.theme_background_color()))
+                ,gui.Button('', font = global_font, size=(1, 1), button_color=(gui.theme_background_color(), gui.theme_background_color())),
+                gui.Button('He', font = global_font, size=(1, 1), button_color=('', p_colour)),
             ],
             #2nd period
             [
-                gui.Button('Li', size=(1, 1), button_color=('', s_colour)),
-                gui.Button('Be', size=(1, 1), button_color=('', s_colour)),
-                gui.Button('', size=(1, 1), button_color=(gui.theme_background_color(), gui.theme_background_color()))
-                ,gui.Button('', size=(1, 1), button_color=(gui.theme_background_color(), gui.theme_background_color()))
-                ,gui.Button('', size=(1, 1), button_color=(gui.theme_background_color(), gui.theme_background_color()))
-                ,gui.Button('', size=(1, 1), button_color=(gui.theme_background_color(), gui.theme_background_color()))
-                ,gui.Button('', size=(1, 1), button_color=(gui.theme_background_color(), gui.theme_background_color()))
-                ,gui.Button('', size=(1, 1), button_color=(gui.theme_background_color(), gui.theme_background_color())),
-                gui.Button('',size=(1, 1),button_color=(gui.theme_background_color(),gui.theme_background_color())),
-                gui.Button('', size=(1, 1), button_color=(gui.theme_background_color(), gui.theme_background_color()))
-                ,gui.Button('', size=(1, 1), button_color=(gui.theme_background_color(), gui.theme_background_color()))
-                ,gui.Button('', size=(1, 1), button_color=(gui.theme_background_color(), gui.theme_background_color())),
-                gui.Button('B', size=(1, 1), button_color=('', p_colour)),
-                gui.Button('C', size=(1, 1), button_color=('', p_colour)),
-                gui.Button('N', size=(1, 1), button_color=('', p_colour)),
-                gui.Button('O', size=(1, 1), button_color=('', p_colour)),
-                gui.Button('F', size=(1, 1), button_color=('', p_colour)),
-                gui.Button('Ne', size=(1, 1), button_color=('', p_colour)),
+                gui.Button('Li', font = global_font, size=(1, 1), button_color=('', s_colour)),
+                gui.Button('Be', font = global_font, size=(1, 1), button_color=('', s_colour)),
+                gui.Button('', font = global_font, size=(1, 1), button_color=(gui.theme_background_color(), gui.theme_background_color()))
+                ,gui.Button('', font = global_font, size=(1, 1), button_color=(gui.theme_background_color(), gui.theme_background_color()))
+                ,gui.Button('', font = global_font, size=(1, 1), button_color=(gui.theme_background_color(), gui.theme_background_color()))
+                ,gui.Button('', font = global_font, size=(1, 1), button_color=(gui.theme_background_color(), gui.theme_background_color()))
+                ,gui.Button('', font = global_font, size=(1, 1), button_color=(gui.theme_background_color(), gui.theme_background_color()))
+                ,gui.Button('', font = global_font, size=(1, 1), button_color=(gui.theme_background_color(), gui.theme_background_color())),
+                gui.Button('',font = global_font, size=(1, 1),button_color=(gui.theme_background_color(),gui.theme_background_color())),
+                gui.Button('', font = global_font, size=(1, 1), button_color=(gui.theme_background_color(), gui.theme_background_color()))
+                ,gui.Button('', font = global_font, size=(1, 1), button_color=(gui.theme_background_color(), gui.theme_background_color()))
+                ,gui.Button('', font = global_font, size=(1, 1), button_color=(gui.theme_background_color(), gui.theme_background_color())),
+                gui.Button('B', font = global_font, size=(1, 1), button_color=('', p_colour)),
+                gui.Button('C', font = global_font, size=(1, 1), button_color=('', p_colour)),
+                gui.Button('N', font = global_font, size=(1, 1), button_color=('', p_colour)),
+                gui.Button('O', font = global_font, size=(1, 1), button_color=('', p_colour)),
+                gui.Button('F', font = global_font, size=(1, 1), button_color=('', p_colour)),
+                gui.Button('Ne', font = global_font, size=(1, 1), button_color=('', p_colour)),
             ],
             #3rd period
             [
-                gui.Button('Na', size=(1, 1), button_color=('', s_colour)),
-                gui.Button('Mg', size=(1, 1), button_color=('', s_colour)),
-                gui.Button('', size=(1, 1), button_color=(gui.theme_background_color(), gui.theme_background_color()))
-                ,gui.Button('', size=(1, 1), button_color=(gui.theme_background_color(), gui.theme_background_color()))
-                ,gui.Button('', size=(1, 1), button_color=(gui.theme_background_color(), gui.theme_background_color()))
-                ,gui.Button('', size=(1, 1), button_color=(gui.theme_background_color(), gui.theme_background_color()))
-                ,gui.Button('', size=(1, 1), button_color=(gui.theme_background_color(), gui.theme_background_color()))
-                ,gui.Button('', size=(1, 1), button_color=(gui.theme_background_color(), gui.theme_background_color()))
-                ,gui.Button('', size=(1, 1), button_color=(gui.theme_background_color(), gui.theme_background_color()))
-                ,gui.Button('', size=(1, 1), button_color=(gui.theme_background_color(), gui.theme_background_color()))
-                ,gui.Button('', size=(1, 1), button_color=(gui.theme_background_color(), gui.theme_background_color()))
-                ,gui.Button('',size=(1, 1),button_color=(gui.theme_background_color(),gui.theme_background_color())),
-                gui.Button('Al', size=(1, 1), button_color=('', p_colour)),
-                gui.Button('Si', size=(1, 1), button_color=('', p_colour)),
-                gui.Button('P', size=(1, 1), button_color=('', p_colour)),
-                gui.Button('S', size=(1, 1), button_color=('', p_colour)),
-                gui.Button('Cl', size=(1, 1), button_color=('', p_colour)),
-                gui.Button('Ar', size=(1, 1), button_color=('', p_colour))
+                gui.Button('Na', font = global_font, size=(1, 1), button_color=('', s_colour)),
+                gui.Button('Mg', font = global_font, size=(1, 1), button_color=('', s_colour)),
+                gui.Button('', font = global_font, size=(1, 1), button_color=(gui.theme_background_color(), gui.theme_background_color()))
+                ,gui.Button('', font = global_font, size=(1, 1), button_color=(gui.theme_background_color(), gui.theme_background_color()))
+                ,gui.Button('', font = global_font, size=(1, 1), button_color=(gui.theme_background_color(), gui.theme_background_color()))
+                ,gui.Button('', font = global_font, size=(1, 1), button_color=(gui.theme_background_color(), gui.theme_background_color()))
+                ,gui.Button('', font = global_font, size=(1, 1), button_color=(gui.theme_background_color(), gui.theme_background_color()))
+                ,gui.Button('', font = global_font, size=(1, 1), button_color=(gui.theme_background_color(), gui.theme_background_color()))
+                ,gui.Button('', font = global_font, size=(1, 1), button_color=(gui.theme_background_color(), gui.theme_background_color()))
+                ,gui.Button('', font = global_font, size=(1, 1), button_color=(gui.theme_background_color(), gui.theme_background_color()))
+                ,gui.Button('', font = global_font, size=(1, 1), button_color=(gui.theme_background_color(), gui.theme_background_color()))
+                ,gui.Button('',font = global_font, size=(1, 1),button_color=(gui.theme_background_color(),gui.theme_background_color())),
+                gui.Button('Al', font = global_font, size=(1, 1), button_color=('', p_colour)),
+                gui.Button('Si', font = global_font, size=(1, 1), button_color=('', p_colour)),
+                gui.Button('P', font = global_font, size=(1, 1), button_color=('', p_colour)),
+                gui.Button('S', font = global_font, size=(1, 1), button_color=('', p_colour)),
+                gui.Button('Cl', font = global_font, size=(1, 1), button_color=('', p_colour)),
+                gui.Button('Ar', font = global_font, size=(1, 1), button_color=('', p_colour))
             ],
             #4th period
             [
-                gui.Button('K', size=(1, 1), button_color=('', s_colour)),
-                gui.Button('Ca', size=(1, 1), button_color=('', s_colour)),
-                gui.Button('Sc', size=(1, 1), button_color=('', d_colour)),
-                gui.Button('Ti', size=(1, 1), button_color=('', d_colour)),
-                gui.Button('V', size=(1, 1), button_color=('', d_colour)),
-                gui.Button('Cr', size=(1, 1), button_color=('', d_colour)),
-                gui.Button('Mn', size=(1, 1), button_color=('', d_colour)),
-                gui.Button('Fe', size=(1, 1), button_color=('', d_colour)),
-                gui.Button('Co', size=(1, 1), button_color=('', d_colour)),
-                gui.Button('Ni', size=(1, 1), button_color=('', d_colour)),
-                gui.Button('Cu', size=(1, 1), button_color=('', d_colour)),
-                gui.Button('Zn', size=(1, 1), button_color=('', d_colour)),
-                gui.Button('Ga', size=(1, 1), button_color=('', p_colour)),
-                gui.Button('Ge', size=(1, 1), button_color=('', p_colour)),
-                gui.Button('As', size=(1, 1), button_color=('', p_colour)),
-                gui.Button('Se', size=(1, 1), button_color=('', p_colour)),
-                gui.Button('Br', size=(1, 1), button_color=('', p_colour)),
-                gui.Button('Kr', size=(1, 1), button_color=('', p_colour)),
+                gui.Button('K', font = global_font, size=(1, 1), button_color=('', s_colour)),
+                gui.Button('Ca', font = global_font, size=(1, 1), button_color=('', s_colour)),
+                gui.Button('Sc', font = global_font, size=(1, 1), button_color=('', d_colour)),
+                gui.Button('Ti', font = global_font, size=(1, 1), button_color=('', d_colour)),
+                gui.Button('V', font = global_font, size=(1, 1), button_color=('', d_colour)),
+                gui.Button('Cr', font = global_font, size=(1, 1), button_color=('', d_colour)),
+                gui.Button('Mn', font = global_font, size=(1, 1), button_color=('', d_colour)),
+                gui.Button('Fe', font = global_font, size=(1, 1), button_color=('', d_colour)),
+                gui.Button('Co', font = global_font, size=(1, 1), button_color=('', d_colour)),
+                gui.Button('Ni', font = global_font, size=(1, 1), button_color=('', d_colour)),
+                gui.Button('Cu', font = global_font, size=(1, 1), button_color=('', d_colour)),
+                gui.Button('Zn', font = global_font, size=(1, 1), button_color=('', d_colour)),
+                gui.Button('Ga', font = global_font, size=(1, 1), button_color=('', p_colour)),
+                gui.Button('Ge', font = global_font, size=(1, 1), button_color=('', p_colour)),
+                gui.Button('As', font = global_font, size=(1, 1), button_color=('', p_colour)),
+                gui.Button('Se', font = global_font, size=(1, 1), button_color=('', p_colour)),
+                gui.Button('Br', font = global_font, size=(1, 1), button_color=('', p_colour)),
+                gui.Button('Kr', font = global_font, size=(1, 1), button_color=('', p_colour)),
             ],
             #5th period
             [
-                gui.Button('Rb', size=(1, 1), button_color=('', s_colour)),
-                gui.Button('Sr', size=(1, 1), button_color=('', s_colour)),
-                gui.Button('Y', size=(1, 1), button_color=('', d_colour)),
-                gui.Button('Zr', size=(1, 1), button_color=('', d_colour)),
-                gui.Button('Nb', size=(1, 1), button_color=('', d_colour)),
-                gui.Button('Mo', size=(1, 1), button_color=('', d_colour)),
-                gui.Button('Tc', size=(1, 1), button_color=('', d_colour)),
-                gui.Button('Ru', size=(1,1), button_color=('', d_colour)),
-                gui.Button('Rh', size=(1, 1), button_color=('', d_colour)),
-                gui.Button('Pd', size=(1, 1), button_color=('', d_colour)),
-                gui.Button('Ag', size=(1, 1), button_color=('', d_colour)),
-                gui.Button('Cd', size=(1, 1), button_color=('', d_colour)),
-                gui.Button('In', size=(1, 1), button_color=('', p_colour)),
-                gui.Button('Sn', size=(1, 1), button_color=('', p_colour)),
-                gui.Button('Sb', size=(1, 1), button_color=('', p_colour)),
-                gui.Button('Te', size=(1, 1), button_color=('', p_colour)),
-                gui.Button('I', size=(1, 1), button_color=('', p_colour)),
-                gui.Button('Xe', size=(1, 1), button_color=('', p_colour))
+                gui.Button('Rb', font = global_font, size=(1, 1), button_color=('', s_colour)),
+                gui.Button('Sr', font = global_font, size=(1, 1), button_color=('', s_colour)),
+                gui.Button('Y', font = global_font, size=(1, 1), button_color=('', d_colour)),
+                gui.Button('Zr', font = global_font, size=(1, 1), button_color=('', d_colour)),
+                gui.Button('Nb', font = global_font, size=(1, 1), button_color=('', d_colour)),
+                gui.Button('Mo', font = global_font, size=(1, 1), button_color=('', d_colour)),
+                gui.Button('Tc', font = global_font, size=(1, 1), button_color=('', d_colour)),
+                gui.Button('Ru', font = global_font, size=(1,1), button_color=('', d_colour)),
+                gui.Button('Rh', font = global_font, size=(1, 1), button_color=('', d_colour)),
+                gui.Button('Pd', font = global_font, size=(1, 1), button_color=('', d_colour)),
+                gui.Button('Ag', font = global_font, size=(1, 1), button_color=('', d_colour)),
+                gui.Button('Cd', font = global_font, size=(1, 1), button_color=('', d_colour)),
+                gui.Button('In', font = global_font, size=(1, 1), button_color=('', p_colour)),
+                gui.Button('Sn', font = global_font, size=(1, 1), button_color=('', p_colour)),
+                gui.Button('Sb', font = global_font, size=(1, 1), button_color=('', p_colour)),
+                gui.Button('Te', font = global_font, size=(1, 1), button_color=('', p_colour)),
+                gui.Button('I', font = global_font, size=(1, 1), button_color=('', p_colour)),
+                gui.Button('Xe', font = global_font, size=(1, 1), button_color=('', p_colour))
             ],
                 #6th period
             [
-                gui.Button('Cs', size=(1, 1), button_color=('', s_colour)),
-                gui.Button('Ba', size=(1, 1), button_color=('', s_colour)),
-                gui.Button('La', size=(1, 1), button_color=('', d_colour)),
-                gui.Button('Hf', size=(1, 1), button_color=('', d_colour)),
-                gui.Button('Ta', size=(1, 1), button_color=('', d_colour)),
-                gui.Button('W', size=(1, 1), button_color=('', d_colour)),
-                gui.Button('Re', size=(1, 1), button_color=('', d_colour)),
-                gui.Button('Os', size=(1, 1), button_color=('', d_colour)),
-                gui.Button('Ir', size=(1, 1), button_color=('', d_colour)),
-                gui.Button('Pt', size=(1, 1), button_color=('', d_colour)),
-                gui.Button('Au', size=(1, 1), button_color=('', d_colour)),
-                gui.Button('Hg', size=(1, 1), button_color=('', d_colour)),
-                gui.Button('Tl', size=(1, 1), button_color=('', p_colour)),
-                gui.Button('Pb', size=(1, 1), button_color=('', p_colour)),
-                gui.Button('Bi', size=(1, 1), button_color=('', p_colour)),
-                gui.Button('Po', size=(1, 1), button_color=('', p_colour)),
-                gui.Button('At', size=(1, 1), button_color=('', p_colour)),
-                gui.Button('Rn', size=(1, 1), button_color=('', p_colour))
+                gui.Button('Cs', font = global_font, size=(1, 1), button_color=('', s_colour)),
+                gui.Button('Ba', font = global_font, size=(1, 1), button_color=('', s_colour)),
+                gui.Button('La', font = global_font, size=(1, 1), button_color=('', d_colour)),
+                gui.Button('Hf', font = global_font, size=(1, 1), button_color=('', d_colour)),
+                gui.Button('Ta', font = global_font, size=(1, 1), button_color=('', d_colour)),
+                gui.Button('W', font = global_font, size=(1, 1), button_color=('', d_colour)),
+                gui.Button('Re', font = global_font, size=(1, 1), button_color=('', d_colour)),
+                gui.Button('Os', font = global_font, size=(1, 1), button_color=('', d_colour)),
+                gui.Button('Ir', font = global_font, size=(1, 1), button_color=('', d_colour)),
+                gui.Button('Pt', font = global_font, size=(1, 1), button_color=('', d_colour)),
+                gui.Button('Au', font = global_font, size=(1, 1), button_color=('', d_colour)),
+                gui.Button('Hg', font = global_font, size=(1, 1), button_color=('', d_colour)),
+                gui.Button('Tl', font = global_font, size=(1, 1), button_color=('', p_colour)),
+                gui.Button('Pb', font = global_font, size=(1, 1), button_color=('', p_colour)),
+                gui.Button('Bi', font = global_font, size=(1, 1), button_color=('', p_colour)),
+                gui.Button('Po', font = global_font, size=(1, 1), button_color=('', p_colour)),
+                gui.Button('At', font = global_font, size=(1, 1), button_color=('', p_colour)),
+                gui.Button('Rn', font = global_font, size=(1, 1), button_color=('', p_colour))
             ],
             #7th period
             [
-                gui.Button('Fr', size=(1, 1), button_color=('', s_colour)),
-                gui.Button('Ra', size=(1, 1), button_color=('', s_colour)),
-                gui.Button('Ac', size=(1, 1), button_color=('', d_colour)),
-                gui.Button('Rf', size=(1, 1), button_color=('', d_colour)),
-                gui.Button('Db', size=(1, 1), button_color=('', d_colour)),
-                gui.Button('Sg', size=(1, 1), button_color=('', d_colour)),
-                gui.Button('Bh', size=(1, 1), button_color=('', d_colour)),
-                gui.Button('Hs', size=(1, 1), button_color=('', d_colour)),
-                gui.Button('Mt', size=(1, 1), button_color=('', d_colour)),
-                gui.Button('Ds', size=(1, 1), button_color=('', d_colour)),
-                gui.Button('Rg', size=(1, 1), button_color=('', d_colour)),
-                gui.Button('Cn', size=(1, 1), button_color=('', d_colour)),
-                gui.Button('Nh', size=(1, 1), button_color=('', p_colour)),
-                gui.Button('Fl', size=(1, 1), button_color=('', p_colour)),
-                gui.Button('Mc', size=(1, 1), button_color=('', p_colour)),
-                gui.Button('Lv', size=(1, 1), button_color=('', p_colour)),
-                gui.Button('Ts', size=(1, 1), button_color=('', p_colour)),
-                gui.Button('Og', size=(1, 1), button_color=('', p_colour))
+                gui.Button('Fr', font = global_font, size=(1, 1), button_color=('', s_colour)),
+                gui.Button('Ra', font = global_font, size=(1, 1), button_color=('', s_colour)),
+                gui.Button('Ac', font = global_font, size=(1, 1), button_color=('', d_colour)),
+                gui.Button('Rf', font = global_font, size=(1, 1), button_color=('', d_colour)),
+                gui.Button('Db', font = global_font, size=(1, 1), button_color=('', d_colour)),
+                gui.Button('Sg', font = global_font, size=(1, 1), button_color=('', d_colour)),
+                gui.Button('Bh', font = global_font, size=(1, 1), button_color=('', d_colour)),
+                gui.Button('Hs', font = global_font, size=(1, 1), button_color=('', d_colour)),
+                gui.Button('Mt', font = global_font, size=(1, 1), button_color=('', d_colour)),
+                gui.Button('Ds', font = global_font, size=(1, 1), button_color=('', d_colour)),
+                gui.Button('Rg', font = global_font, size=(1, 1), button_color=('', d_colour)),
+                gui.Button('Cn', font = global_font, size=(1, 1), button_color=('', d_colour)),
+                gui.Button('Nh', font = global_font, size=(1, 1), button_color=('', p_colour)),
+                gui.Button('Fl', font = global_font, size=(1, 1), button_color=('', p_colour)),
+                gui.Button('Mc', font = global_font, size=(1, 1), button_color=('', p_colour)),
+                gui.Button('Lv', font = global_font, size=(1, 1), button_color=('', p_colour)),
+                gui.Button('Ts', font = global_font, size=(1, 1), button_color=('', p_colour)),
+                gui.Button('Og', font = global_font, size=(1, 1), button_color=('', p_colour))
             ],
             #lanthanide series
             [
-                gui.Button('',size=(1, 1),button_color=(gui.theme_background_color(),gui.theme_background_color())),
-                gui.Button('',size=(1, 1),button_color=(gui.theme_background_color(),gui.theme_background_color())),
-                gui.Button('Ce', size=(1, 1), button_color=('', f_colour)),
-                gui.Button('Pr', size=(1, 1), button_color=('', f_colour)),
-                gui.Button('Nd', size=(1, 1), button_color=('', f_colour)),
-                gui.Button('Pm', size=(1, 1), button_color=('', f_colour)),
-                gui.Button('Sm', size=(1, 1), button_color=('', f_colour)),
-                gui.Button('Eu', size=(1, 1), button_color=('', f_colour)),
-                gui.Button('Gd', size=(1, 1), button_color=('', f_colour)),
-                gui.Button('Tb', size=(1, 1), button_color=('', f_colour)),
-                gui.Button('Dy', size=(1, 1), button_color=('', f_colour)),
-                gui.Button('Ho', size=(1, 1), button_color=('', f_colour)),
-                gui.Button('Er', size=(1, 1), button_color=('', f_colour)),
-                gui.Button('Tm', size=(1, 1), button_color=('', f_colour)),
-                gui.Button('Yb', size=(1, 1), button_color=('', f_colour)),
-                gui.Button('Lu', size=(1, 1), button_color=('', f_colour)),
-                gui.Button('',size=(1, 1),button_color=(gui.theme_background_color(),gui.theme_background_color())),
-                gui.Button('',size=(1, 1),button_color=(gui.theme_background_color(),gui.theme_background_color())),
+                gui.Button('',font = global_font, size=(1, 1),button_color=(gui.theme_background_color(),gui.theme_background_color())),
+                gui.Button('',font = global_font, size=(1, 1),button_color=(gui.theme_background_color(),gui.theme_background_color())),
+                gui.Button('Ce', font = global_font, size=(1, 1), button_color=('', f_colour)),
+                gui.Button('Pr', font = global_font, size=(1, 1), button_color=('', f_colour)),
+                gui.Button('Nd', font = global_font, size=(1, 1), button_color=('', f_colour)),
+                gui.Button('Pm', font = global_font, size=(1, 1), button_color=('', f_colour)),
+                gui.Button('Sm', font = global_font, size=(1, 1), button_color=('', f_colour)),
+                gui.Button('Eu', font = global_font, size=(1, 1), button_color=('', f_colour)),
+                gui.Button('Gd', font = global_font, size=(1, 1), button_color=('', f_colour)),
+                gui.Button('Tb', font = global_font, size=(1, 1), button_color=('', f_colour)),
+                gui.Button('Dy', font = global_font, size=(1, 1), button_color=('', f_colour)),
+                gui.Button('Ho', font = global_font, size=(1, 1), button_color=('', f_colour)),
+                gui.Button('Er', font = global_font, size=(1, 1), button_color=('', f_colour)),
+                gui.Button('Tm', font = global_font, size=(1, 1), button_color=('', f_colour)),
+                gui.Button('Yb', font = global_font, size=(1, 1), button_color=('', f_colour)),
+                gui.Button('Lu', font = global_font, size=(1, 1), button_color=('', f_colour)),
+                gui.Button('',font = global_font, size=(1, 1),button_color=(gui.theme_background_color(),gui.theme_background_color())),
+                gui.Button('',font = global_font, size=(1, 1),button_color=(gui.theme_background_color(),gui.theme_background_color())),
             ],
                 #actinide series
             [
-                gui.Button('',size=(1, 1),button_color=(gui.theme_background_color(),gui.theme_background_color())),gui.Button('',size=(1, 1),button_color=(gui.theme_background_color(),gui.theme_background_color())),
-                gui.Button('Th', size=(1, 1), button_color=('', f_colour)),
-                gui.Button('Pa', size=(1, 1), button_color=('', f_colour)),
-                gui.Button('U', size=(1, 1), button_color=('', f_colour)),
-                gui.Button('Np', size=(1, 1), button_color=('', f_colour)),
-                gui.Button('Pu', size=(1, 1), button_color=('', f_colour)),
-                gui.Button('Am', size=(1, 1), button_color=('', f_colour)),
-                gui.Button('Cm', size=(1, 1), button_color=('', f_colour)),
-                gui.Button('Bk', size=(1, 1), button_color=('', f_colour)),
-                gui.Button('Cr', size=(1, 1), button_color=('', f_colour)),
-                gui.Button('Es', size=(1, 1), button_color=('', f_colour)),
-                gui.Button('Fm', size=(1, 1), button_color=('', f_colour)),
-                gui.Button('Md', size=(1, 1), button_color=('', f_colour)),
-                gui.Button('No', size=(1, 1), button_color=('', f_colour)),
-                gui.Button('Lr', size=(1, 1), button_color=('', f_colour)),
-                gui.Button('',size=(1, 1),button_color=(gui.theme_background_color(),gui.theme_background_color())),
-                gui.Button('',size=(1, 1),button_color=(gui.theme_background_color(),gui.theme_background_color())),
+                gui.Button('',font = global_font, size=(1, 1),button_color=(gui.theme_background_color(),gui.theme_background_color())),gui.Button('',font = global_font, size=(1, 1),button_color=(gui.theme_background_color(),gui.theme_background_color())),
+                gui.Button('Th', font = global_font, size=(1, 1), button_color=('', f_colour)),
+                gui.Button('Pa', font = global_font, size=(1, 1), button_color=('', f_colour)),
+                gui.Button('U', font = global_font, size=(1, 1), button_color=('', f_colour)),
+                gui.Button('Np', font = global_font, size=(1, 1), button_color=('', f_colour)),
+                gui.Button('Pu', font = global_font, size=(1, 1), button_color=('', f_colour)),
+                gui.Button('Am', font = global_font, size=(1, 1), button_color=('', f_colour)),
+                gui.Button('Cm', font = global_font, size=(1, 1), button_color=('', f_colour)),
+                gui.Button('Bk', font = global_font, size=(1, 1), button_color=('', f_colour)),
+                gui.Button('Cr', font = global_font, size=(1, 1), button_color=('', f_colour)),
+                gui.Button('Es', font = global_font, size=(1, 1), button_color=('', f_colour)),
+                gui.Button('Fm', font = global_font, size=(1, 1), button_color=('', f_colour)),
+                gui.Button('Md', font = global_font, size=(1, 1), button_color=('', f_colour)),
+                gui.Button('No', font = global_font, size=(1, 1), button_color=('', f_colour)),
+                gui.Button('Lr', font = global_font, size=(1, 1), button_color=('', f_colour)),
+                gui.Button('',font = global_font, size=(1, 1),button_color=(gui.theme_background_color(),gui.theme_background_color())),
+                gui.Button('',font = global_font, size=(1, 1),button_color=(gui.theme_background_color(),gui.theme_background_color())),
             ]
         ]        
-        
         
         win.Hide()
 
 
         win1 = gui.Window("Periodic Table", layout = periodictablelayout)
+
+        loadingscreen.close()
+        del loadingscreen
         
 
         while True:
@@ -247,11 +251,17 @@ while True:
                 elem = eval(f"pt.{event1}")
                 info_win_layout = [
                     [
-                        gui.Listbox(values=['name', 'number', 'symbol','mass', 'density', 'covalent_radius', 'interatomic_distance', 'ions', 'charge', 'isotopes', ], size=(30, 10)),
-                        gui.Multiline( size = (30,10), key = 'info', do_not_clear=False, disabled=True)
+                        gui.Listbox(values=['name', 'number', 'symbol','mass', 'density', 'covalent_radius', 'interatomic_distance', 'ions', 'charge', 'isotopes', ], size=(30, 10), key = 'List'),
+                        gui.Multiline( size = (30,10), font = global_font, key = 'info', do_not_clear=False, disabled=True)
                     ],
+                    [
+                        gui.Ok(size = (20, 2)), gui.Text("               "), gui.Exit(size = (20, 2))
+                    ]
 
                 ]
+                
+                
+
                 info_win = gui.Window(str(elem), layout = info_win_layout)
 
                 while True:
@@ -259,9 +269,26 @@ while True:
 
                     if event1_info in (None, 'Exit'):
                         info_win.close()
-                        del info_win
                         break
+
                     
+                    
+                    if event1_info == "Ok":
+
+                        line = ''
+
+                        properties = info_win['List'].get()
+
+                        for property in properties:
+                            line += str('\n' + property + ' : ' + str(eval(f'elem.{property}')))
+                        
+
+                        info_win['info'].update(line)
+                    
+                        
+                        
+
+
                     
                     
 
