@@ -1,5 +1,6 @@
 import PySimpleGUI as gui
 import periodictable as pt
+import chemlib as c
 
 
 gui.theme("Black")
@@ -16,10 +17,18 @@ layout = [
         gui.Text("1."),
         gui.Button('Periodic Table', size=(50, 1))
     ],
+    [ 
+        gui.Text("2."),
+        gui.Button('Molecular Mass', size=(50,1)),
+    ],
+    [ 
+        gui.Text("3."),
+        gui.Button('Reactions', size=(50,1)),
+    ]
 ]
 
-win = gui.Window("Calculator", layout = layout)
 
+win = gui.Window("Calculator", layout = layout, size = (500,300))
 while True:
     event, values = win.read(timeout = 10000)
 
@@ -34,44 +43,42 @@ while True:
         d_colour = '#1E90FF'
         f_colour = '#FF0000'
 
-        
-
         periodictablelayout = [
             #1st period
             [
                 gui.Button('H', size=(1, 1), button_color=('', s_colour)),
-                gui.Button('', size=(1, 1), button_color=(gui.theme_background_color(), gui.theme_background_color()))
-                ,gui.Button('', size=(1, 1), button_color=(gui.theme_background_color(), gui.theme_background_color()))
-                ,gui.Button('', size=(1, 1), button_color=(gui.theme_background_color(), gui.theme_background_color()))
-                ,gui.Button('', size=(1, 1), button_color=(gui.theme_background_color(), gui.theme_background_color()))
-                ,gui.Button('', size=(1, 1), button_color=(gui.theme_background_color(), gui.theme_background_color()))
-                ,gui.Button('', size=(1, 1), button_color=(gui.theme_background_color(), gui.theme_background_color()))
-                ,gui.Button('', size=(1, 1), button_color=(gui.theme_background_color(), gui.theme_background_color()))
-                ,gui.Button('', size=(1, 1), button_color=(gui.theme_background_color(), gui.theme_background_color()))
-                ,gui.Button('', size=(1, 1), button_color=(gui.theme_background_color(), gui.theme_background_color()))
-                ,gui.Button('', size=(1, 1), button_color=(gui.theme_background_color(), gui.theme_background_color()))
-                ,gui.Button('', size=(1, 1), button_color=(gui.theme_background_color(), gui.theme_background_color()))
-                ,gui.Button('', size=(1, 1), button_color=(gui.theme_background_color(), gui.theme_background_color()))
-                ,gui.Button('', size=(1, 1), button_color=(gui.theme_background_color(), gui.theme_background_color()))
-                ,gui.Button('', size=(1, 1), button_color=(gui.theme_background_color(), gui.theme_background_color()))
-                ,gui.Button('', size=(1, 1), button_color=(gui.theme_background_color(), gui.theme_background_color()))
-                ,gui.Button('', size=(1, 1), button_color=(gui.theme_background_color(), gui.theme_background_color())),
+                gui.Button('', size=(1, 1), button_color=(gui.theme_background_color(), gui.theme_background_color())),
+                gui.Button('', size=(1, 1), button_color=(gui.theme_background_color(), gui.theme_background_color())),
+                gui.Button('', size=(1, 1), button_color=(gui.theme_background_color(), gui.theme_background_color())),
+                gui.Button('', size=(1, 1), button_color=(gui.theme_background_color(), gui.theme_background_color())),
+                gui.Button('', size=(1, 1), button_color=(gui.theme_background_color(), gui.theme_background_color())),
+                gui.Button('', size=(1, 1), button_color=(gui.theme_background_color(), gui.theme_background_color())),
+                gui.Button('', size=(1, 1), button_color=(gui.theme_background_color(), gui.theme_background_color())),
+                gui.Button('', size=(1, 1), button_color=(gui.theme_background_color(), gui.theme_background_color())),
+                gui.Button('', size=(1, 1), button_color=(gui.theme_background_color(), gui.theme_background_color())),
+                gui.Button('', size=(1, 1), button_color=(gui.theme_background_color(), gui.theme_background_color())),
+                gui.Button('', size=(1, 1), button_color=(gui.theme_background_color(), gui.theme_background_color())),
+                gui.Button('', size=(1, 1), button_color=(gui.theme_background_color(), gui.theme_background_color())),
+                gui.Button('', size=(1, 1), button_color=(gui.theme_background_color(), gui.theme_background_color())),
+                gui.Button('', size=(1, 1), button_color=(gui.theme_background_color(), gui.theme_background_color())),
+                gui.Button('', size=(1, 1), button_color=(gui.theme_background_color(), gui.theme_background_color())),
+                gui.Button('', size=(1, 1), button_color=(gui.theme_background_color(), gui.theme_background_color())),
                 gui.Button('He', size=(1, 1), button_color=('', p_colour)),
             ],
             #2nd period
             [
                 gui.Button('Li', size=(1, 1), button_color=('', s_colour)),
                 gui.Button('Be', size=(1, 1), button_color=('', s_colour)),
-                gui.Button('', size=(1, 1), button_color=(gui.theme_background_color(), gui.theme_background_color()))
-                ,gui.Button('', size=(1, 1), button_color=(gui.theme_background_color(), gui.theme_background_color()))
-                ,gui.Button('', size=(1, 1), button_color=(gui.theme_background_color(), gui.theme_background_color()))
-                ,gui.Button('', size=(1, 1), button_color=(gui.theme_background_color(), gui.theme_background_color()))
-                ,gui.Button('', size=(1, 1), button_color=(gui.theme_background_color(), gui.theme_background_color()))
-                ,gui.Button('', size=(1, 1), button_color=(gui.theme_background_color(), gui.theme_background_color())),
-                gui.Button('', size=(1, 1),button_color=(gui.theme_background_color(),gui.theme_background_color())),
-                gui.Button('', size=(1, 1), button_color=(gui.theme_background_color(), gui.theme_background_color()))
-                ,gui.Button('', size=(1, 1), button_color=(gui.theme_background_color(), gui.theme_background_color()))
-                ,gui.Button('', size=(1, 1), button_color=(gui.theme_background_color(), gui.theme_background_color())),
+                gui.Button('', size=(1, 1), button_color=(gui.theme_background_color(), gui.theme_background_color())),
+                gui.Button('', size=(1, 1), button_color=(gui.theme_background_color(), gui.theme_background_color())),
+                gui.Button('', size=(1, 1), button_color=(gui.theme_background_color(), gui.theme_background_color())),
+                gui.Button('', size=(1, 1), button_color=(gui.theme_background_color(), gui.theme_background_color())),
+                gui.Button('', size=(1, 1), button_color=(gui.theme_background_color(), gui.theme_background_color())),
+                gui.Button('', size=(1, 1), button_color=(gui.theme_background_color(), gui.theme_background_color())),
+                gui.Button('', size=(1, 1), button_color=(gui.theme_background_color(), gui.theme_background_color())),
+                gui.Button('', size=(1, 1), button_color=(gui.theme_background_color(), gui.theme_background_color())),
+                gui.Button('', size=(1, 1), button_color=(gui.theme_background_color(), gui.theme_background_color())),
+                gui.Button('', size=(1, 1), button_color=(gui.theme_background_color(), gui.theme_background_color())),
                 gui.Button('B', size=(1, 1), button_color=('', p_colour)),
                 gui.Button('C', size=(1, 1), button_color=('', p_colour)),
                 gui.Button('N', size=(1, 1), button_color=('', p_colour)),
@@ -83,16 +90,16 @@ while True:
             [
                 gui.Button('Na', size=(1, 1), button_color=('', s_colour)),
                 gui.Button('Mg', size=(1, 1), button_color=('', s_colour)),
-                gui.Button('', size=(1, 1), button_color=(gui.theme_background_color(), gui.theme_background_color()))
-                ,gui.Button('', size=(1, 1), button_color=(gui.theme_background_color(), gui.theme_background_color()))
-                ,gui.Button('', size=(1, 1), button_color=(gui.theme_background_color(), gui.theme_background_color()))
-                ,gui.Button('', size=(1, 1), button_color=(gui.theme_background_color(), gui.theme_background_color()))
-                ,gui.Button('', size=(1, 1), button_color=(gui.theme_background_color(), gui.theme_background_color()))
-                ,gui.Button('', size=(1, 1), button_color=(gui.theme_background_color(), gui.theme_background_color()))
-                ,gui.Button('', size=(1, 1), button_color=(gui.theme_background_color(), gui.theme_background_color()))
-                ,gui.Button('', size=(1, 1), button_color=(gui.theme_background_color(), gui.theme_background_color()))
-                ,gui.Button('', size=(1, 1), button_color=(gui.theme_background_color(), gui.theme_background_color()))
-                ,gui.Button('', size=(1, 1),button_color=(gui.theme_background_color(),gui.theme_background_color())),
+                gui.Button('', size=(1, 1), button_color=(gui.theme_background_color(), gui.theme_background_color())),
+                gui.Button('', size=(1, 1), button_color=(gui.theme_background_color(), gui.theme_background_color())),
+                gui.Button('', size=(1, 1), button_color=(gui.theme_background_color(), gui.theme_background_color())),
+                gui.Button('', size=(1, 1), button_color=(gui.theme_background_color(), gui.theme_background_color())),
+                gui.Button('', size=(1, 1), button_color=(gui.theme_background_color(), gui.theme_background_color())),
+                gui.Button('', size=(1, 1), button_color=(gui.theme_background_color(), gui.theme_background_color())),
+                gui.Button('', size=(1, 1), button_color=(gui.theme_background_color(), gui.theme_background_color())),
+                gui.Button('', size=(1, 1), button_color=(gui.theme_background_color(), gui.theme_background_color())),
+                gui.Button('', size=(1, 1), button_color=(gui.theme_background_color(), gui.theme_background_color())),
+                gui.Button('', size=(1, 1), button_color=(gui.theme_background_color(), gui.theme_background_color())),
                 gui.Button('Al', size=(1, 1), button_color=('', p_colour)),
                 gui.Button('Si', size=(1, 1), button_color=('', p_colour)),
                 gui.Button('P', size=(1, 1), button_color=('', p_colour)),
@@ -228,14 +235,8 @@ while True:
         ]        
         
         win.Hide()
-        loadingscreen = gui.Window("Loading...", layout = [[gui.Text("\n\n\t\tLoading...\t\t\n\n")]])
-
-
-        win1 = gui.Window("Periodic Table", layout = periodictablelayout)
-
-        loadingscreen.close()
-        del loadingscreen
         
+        win1 = gui.Window("Periodic Table", layout = periodictablelayout)
 
         while True:
             event1, values1 = win1.read(timeout = 10000)
@@ -246,20 +247,19 @@ while True:
                 break
 
             if event1 in [str(elem) for elem in pt.elements]:
-                elem = eval(f"pt.{event1}")
-                txt = "name : {elem.name} \nnumber : {elem.number} \nsymbol : {elem.symbol} \nmass : {elem.mass} \ndensity : {elem.density} \ncovalent radius : {elem.covalent_radius} \ninteratomic distance : {elem.interatomic_distance} \nions : {elem.ions} \ncharge : {elem.charge} \nisotopes : {elem.isotope} \n"
+
+                elem = c.Element(event1)
+                #txt = f"name : {elem.name} \nnumber : {elem.number} \nsymbol : {elem.symbol} \nmass : {elem.mass} \ndensity : {elem.density} \ncovalent radius : {elem.covalent_radius} \ninteratomic distance : {elem.interatomic_distance} \nions : {elem.ions} \ncharge : {elem.charge} \nisotopes : {elem.isotopes} \n"
 
                 info_win_layout = [
                     [
-                        gui.Text(txt, size = (30,10))
+                        gui.Text(str(elem.properties), size = (30,30))
                     ],
                     [
                         gui.Exit(size = (10, 1))
                     ]
 
-                ]
-                
-                
+                ]                
 
                 info_win = gui.Window(str(elem), layout = info_win_layout)
 
@@ -269,15 +269,36 @@ while True:
 
                     if event1_info in (None, 'Exit'):
                         info_win.close()
-                        break                    
+                        break
                     
-                        
-                        
+    if event == "Molecular Mass":
+        molecularmasslayout = [ 
 
+            [gui.Text('Enter the Compound'), gui.InputText(key = "molecule")],
+            [gui.Button('OK'), gui.Button('cancel')]
+            
+            ]
+             
+        win.Hide()
+        win2 = gui.Window("Molecular Mass", layout = molecularmasslayout)
+        
+        while True:
+            
+                event2, values2 = win2.read(timeout = 10000)
 
-                    
-                    
+                if event2 in (None, 'cancel'):
+                    win2.close()
+                    win.UnHide()
+                    break
 
-                    
+                if event2 == 'OK':
+                    molecule = c.Compound(values2["molecule"])
+                    gui.Popup('The molecular mass =', molecule.molar_mass(), keep_on_top=True)
+    
+    if event == "Reactions":
 
+        reactionwindowlayout = [
+            
+        ]
 
+        
