@@ -8,6 +8,7 @@ authors = ["Your Name <you@example.com>"]
 python = "^3.8"
 pysimplegui = "^4.40.0"
 periodictable = "^1.6.0"
+chemlib = "^2.2.0"
 
 [tool.poetry.dev-dependencies]
 
